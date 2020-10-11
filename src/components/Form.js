@@ -5,17 +5,17 @@ import allCities from "./cities.js";
 import "./style.css";
 
 const StudentForm = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [address1, setAdd1] = useState("");
-    const [address2, setAdd2] = useState("");
-    const [country, setCountry] = useState("");
-    const [state, setstate] = useState("");
-    const [city, setCity] = useState("");
-    const [gender, setGender] = useState("");
-    const [status, setStatus] = useState("");
-    const [favFood, setFood] = useState("");
-    const [favColor, setColor] = useState("");
+    const [name, setName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [address1, setAdd1] = useState(null);
+    const [address2, setAdd2] = useState(null);
+    const [country, setCountry] = useState(null);
+    const [state, setstate] = useState(null);
+    const [city, setCity] = useState(null);
+    const [gender, setGender] = useState(null);
+    const [status, setStatus] = useState(null);
+    const [favFood, setFood] = useState(null);
+    const [favColor, setColor] = useState(null);
     const [countries, setCountries] = useState([]);
     const [states, setStates] = useState([]);
     const [cities, setCities] = useState([]);
@@ -80,6 +80,17 @@ const StudentForm = () => {
                 FavColor: favColor
             }
             console.log(JSON.stringify(data));
+            setName(null);
+            setEmail(null);
+            setAdd1(null);
+            setAdd2(null);
+            setCountry(null);
+            setstate(null);
+            setCity(null);
+            setGender(null);
+            setStatus(null);
+            setFood(null);
+            setColor(null);
             let temp = await fetch("https://react-student-server.herokuapp.com/student", {
                 //let temp = await fetch("http://localhost:3001/student",{
                 method: "POST",
