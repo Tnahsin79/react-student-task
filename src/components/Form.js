@@ -64,6 +64,7 @@ const StudentForm = () => {
         setColor(e.target.value);
     }
     const submit = async () => {
+        
         try {
             var data = {
                 Name: name,
@@ -78,15 +79,16 @@ const StudentForm = () => {
                 FavFood: favFood,
                 FavColor: favColor
             }
-            //let temp = 
-            await fetch("https://react-student-server.herokuapp.com/student", {
-                //let temp = await fetch("http://localhost:3000/student",{
+            console.log(JSON.stringify(data));
+            let temp = await fetch("https://react-student-server.herokuapp.com/student", {
+                //let temp = await fetch("http://localhost:3001/student",{
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
                     "Content-Type": "application/json"
                 }
             });
+            if(temp)
             alert("Student added");
         }
         catch (error) {

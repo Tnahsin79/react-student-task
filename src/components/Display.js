@@ -13,7 +13,7 @@ const Display = () => {
         fetch("https://react-student-server.herokuapp.com/students")
             .then((response) => response.json())
             .then((json) => setData(json));
-    }, [id, data, delid]);
+    }, [delid]);
 
     const changeId = () => {
         setid("");
@@ -53,7 +53,7 @@ const Display = () => {
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container">
             <h1>STUDENT DATA</h1>
             <table className="table">
                 <thead className="thead-dark">

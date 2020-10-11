@@ -83,15 +83,15 @@ const EditForm = (props) => {
                 FavFood: favFood,
                 FavColor: favColor
             }
-            //let temp = 
-            await fetch("https://react-student-server.herokuapp.com/update", {
-                //let temp = await fetch("http://localhost:3000/student",{
+            let temp = await fetch("https://react-student-server.herokuapp.com/update", {
+                //let temp = await fetch("http://localhost:3001/update",{
                 method: "PUT",
                 body: JSON.stringify(data),
                 headers: {
                     "Content-Type": "application/json"
                 }
             });
+            if(temp)
             alert("Student updated");
         }
         catch (error) {
