@@ -20,7 +20,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8080/api/',
+  baseURL: 'http://localhost:8080/api',
   headers: {
     "Content-Type": "application/json",
     // Add any other headers or configurations you need
@@ -57,7 +57,7 @@ const axiosBaseQuery =
         data,
         params,
         headers,
-        body,
+        // body,
       });
       return Promise.resolve(result);
     } catch (axiosError) {

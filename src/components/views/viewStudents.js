@@ -21,7 +21,7 @@ const ViewStudents = () => {
         ]);
     const [deleteStudent, { }] = useDeleteStudentMutation();
     const { data, error, isLoading, refetch } = useGetStudentsQuery();
-    const store = useSelector(state => state)
+        
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = (e, user) => {

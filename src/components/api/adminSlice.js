@@ -9,7 +9,7 @@ export const adminApi = createApi({
   reducerPath: 'adminApi',
   // baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080/api/'}),
   baseQuery: axiosBaseQuery({//fetchBaseQuery({
-    baseUrl: 'http://localhost:8080/api/',
+    baseUrl: 'http://localhost:8080/api',
   }),
   endpoints: (builder) => ({
     getStudents: builder.query({
@@ -36,7 +36,8 @@ export const adminApi = createApi({
       query: (payload) => ({
         url: '/login/admin',
         method: 'POST',
-        body: payload
+        body: payload,
+        data: payload
       })
     }),
     updateStudent: builder.mutation({
@@ -80,9 +81,9 @@ export const adminApi = createApi({
         url: `/createTeacher`,
         method: 'POST',
         body: payload,
-        headers:{
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
+        // headers:{
+        //   Authorization: `Bearer ${localStorage.getItem('token')}`
+        // }
       }),
       // providesTags:['teacherApi'],
       invalidatesTags:['adminApi']
@@ -92,9 +93,9 @@ export const adminApi = createApi({
         url: `/updateAdmin/${payload._id}`,
         method: 'PUT',
         body: payload,
-        headers:{
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
+        // headers:{
+        //   Authorization: `Bearer ${localStorage.getItem('token')}`
+        // }
       }),
       // providesTags:['teacherApi'],
       invalidatesTags:['adminApi']
@@ -103,9 +104,9 @@ export const adminApi = createApi({
       query: (payload) => ({
         url: `/deleteStudent/${payload._id}`,
         method: 'DELETE',
-        headers:{
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
+        // headers:{
+        //   Authorization: `Bearer ${localStorage.getItem('token')}`
+        // }
       }),
       // providesTags:['teacherApi'],
       invalidatesTags:['adminApi']
@@ -114,9 +115,9 @@ export const adminApi = createApi({
       query: (payload) => ({
         url: `/deleteTeacher/${payload._id}`,
         method: 'DELETE',
-        headers:{
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
+        // headers:{
+        //   Authorization: `Bearer ${localStorage.getItem('token')}`
+        // }
       }),
       // providesTags:['teacherApi'],
       invalidatesTags:['adminApi']
